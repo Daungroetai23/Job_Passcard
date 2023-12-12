@@ -213,14 +213,14 @@
         </div>
     </section>
     <hr>
-     <script>
+    <script>
         function changeColor(clickedLabel, containerId) {
             var rating = parseInt(clickedLabel.previousElementSibling.value);
 
             var container = document.getElementById(containerId);
             var labels = container.querySelectorAll('label');
 
-            labels.forEach(function (label) {
+            labels.forEach(function(label) {
                 var labelRating = parseInt(label.previousElementSibling.value);
                 label.style.backgroundColor = labelRating <= rating ? '#34d399' : '#f3f4f6';
             });
