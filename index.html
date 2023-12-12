@@ -105,21 +105,12 @@
                                 <div class="row">
                                     <div class="col">
                                         <div class="rating-container ">
-                                            <input type="radio" id="star1"
-                                                name="rating" value="1">
-                                            <label for="star1"
-                                                onclick="changeColor(this)"
-                                                style="background-color: rgb(52, 211, 153);"></label>
-                                            <input type="radio" id="star2"
-                                                name="rating" value="2">
-                                            <label for="star2"
-                                                onclick="changeColor(this)"
-                                                style="background-color: rgb(52, 211, 153);"></label>
-                                            <input type="radio" id="star3"
-                                                name="rating" value="3">
-                                            <label for="star3"
-                                                onclick="changeColor(this)"
-                                                style="background-color: rgb(52, 211, 153);"></label>
+                                            <input type="radio" id="s1" name="rating1" value="1">
+        <label for="s1" onclick="changeColor(this, 'rating-container-1')"></label>
+        <input type="radio" id="s2" name="rating1" value="2">
+        <label for="s2" onclick="changeColor(this, 'rating-container-1')"></label>
+        <input type="radio" id="s3" name="rating1" value="3">
+        <label for="s3" onclick="changeColor(this, 'rating-container-1')"></label>
                                                 <select name="ggdoc"id="google-docs">
                                                     <option value="0">LV 0-3</option>
                                                     <option value="1">LV 1-3</option>
@@ -155,21 +146,12 @@
                                 <div class="row">
                                     <div class="col-ld">
                                         <div class="rating-container">
-                                            <input type="radio" id="s1"
-                                                name="rating" value="1">
-                                            <label for="s1"
-                                                onclick="changeColor(this)"
-                                                style="background-color: rgb(52, 211, 153);"></label>
-                                            <input type="radio" id="s2"
-                                                name="rating" value="2">
-                                            <label for="s2"
-                                                onclick="changeColor(this)"
-                                                style="background-color: rgb(52, 211, 153);"></label>
-                                            <input type="radio" id="s3"
-                                                name="rating" value="3">
-                                            <label for="s3"
-                                                onclick="changeColor(this)"
-                                                style="background-color: rgb(52, 211, 153);"></label>
+                                             <input type="radio" id="d1" name="rating2" value="1">
+        <label for="d1" onclick="changeColor(this, 'rating-container-2')"></label>
+        <input type="radio" id="d2" name="rating2" value="2">
+        <label for="d2" onclick="changeColor(this, 'rating-container-2')"></label>
+        <input type="radio" id="d3" name="rating2" value="3">
+        <label for="d3" onclick="changeColor(this, 'rating-container-2')"></label>
                                             
                                                 <select name="ggslide"
                                                     id="google-slides">
@@ -231,18 +213,19 @@
         </div>
     </section>
     <hr>
-    <script>
-        function changeColor(clickedLabel) {
+     <script>
+        function changeColor(clickedLabel, containerId) {
             var rating = parseInt(clickedLabel.previousElementSibling.value);
 
-            var labels = document.querySelectorAll('.rating-container label');
-            labels.forEach(function(label) {
+            var container = document.getElementById(containerId);
+            var labels = container.querySelectorAll('label');
+
+            labels.forEach(function (label) {
                 var labelRating = parseInt(label.previousElementSibling.value);
                 label.style.backgroundColor = labelRating <= rating ? '#34d399' : '#f3f4f6';
             });
         }
     </script>
-
     <script
         src="https://cdn.jsdelivr.net/npm/fastbootstrap@2.0.2/dist/js/fastbootstrap.min.js"
         integrity="sha256-o0tNXN7ia0O9G0qNbrzBkEEiQTv+GeW5EO4LjnfDkZk="
